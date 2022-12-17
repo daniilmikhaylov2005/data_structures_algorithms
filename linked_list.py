@@ -54,6 +54,7 @@ class LinkedList:
                 break
             else:
                 startNode = startNode.next
+
     def deleteStart(self):
         node = self.head.next
         if node != None:
@@ -62,6 +63,16 @@ class LinkedList:
         else:
             self.head = node
             self.next = None
+
+    def deleteMiddle(self, findData):
+        startNode = self.head
+        while True:
+            if startNode.data == findData:
+                startNode.next = startNode.next.next
+                break
+            else:
+                startNode = startNode.next
+
     def printAllNodes(self):
         node = self.head
         while True:
@@ -73,6 +84,5 @@ class LinkedList:
 
 
 linked_list = LinkedList()
-
 
 linked_list.printAllNodes()
