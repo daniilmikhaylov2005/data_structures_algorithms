@@ -33,6 +33,16 @@ class LinkedList:
                     break
                 else:
                     startNode = startNode.next
+    def insertMiddle(self, findData, insertingData):
+        startNode = self.head
+        while True:
+            if startNode.data == findData:
+                newNode = Node(insertingData)
+                newNode.next = startNode.next
+                startNode.next = newNode
+                break
+            else:
+                startNode = startNode.next
 
     def printAllNodes(self):
         node = self.head
@@ -45,9 +55,5 @@ class LinkedList:
 
 
 linked_list = LinkedList()
-
-linked_list.insertEnd('Tail')
-linked_list.insertStart("Head")
-
 
 linked_list.printAllNodes()
